@@ -54,7 +54,13 @@ class _checkNumberTypeState extends State<checkNumberType> {
         // Tambahkan jika hanya bilangan bulat
         resultTypes.add('Bilangan Bulat');
       } else {
+        int n = number.toInt();
         // Jika desimal
+        if (n > 0) {
+          resultTypes.add('Bilangan Desimal Positif');
+        } else if (n < 0) {
+          resultTypes.add('Bilangan Desima Negatif');
+        }
         resultTypes.add('Bilangan Desimal');
       }
 
@@ -125,15 +131,13 @@ class _checkNumberTypeState extends State<checkNumberType> {
                 color: Colors.lightBlue.shade50,
                 elevation: 2,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
+                  borderRadius: BorderRadius.circular(12),
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
                     _result,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: Colors.black87,
-                    ),
+                    style: const TextStyle(fontSize: 16, color: Colors.black87),
                     textAlign: TextAlign.center,
                   ),
                 ),
