@@ -105,13 +105,7 @@ class _SiteRecomendationListState extends State<SiteRecomendationList> {
                         ),
                       ),
                       const SizedBox(height: 5),
-                      Text(
-                        '${gameList[index].price.toString()}',
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.green,
-                        ),
-                      ),
+                      
                     ],
                   ),
                 ),

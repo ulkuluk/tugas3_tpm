@@ -66,7 +66,7 @@ class _CartPageState extends State<CartPage> {
                       fit: BoxFit.cover,
                     ),
                     title: Text(game.name),
-                    subtitle: Text('Harga: \$${game.price.toString()}'),
+                    subtitle: Text('Harga: ${game.price.toString()}'),
                     trailing: IconButton(
                       icon: Icon(Icons.delete),
                       onPressed: () {
