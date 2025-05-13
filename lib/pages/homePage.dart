@@ -38,7 +38,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(
           _titles[_selectedIndex],
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(
+            color: Colors.white),
         ),
         backgroundColor: Colors.blueAccent,
         centerTitle: true,
@@ -110,6 +111,7 @@ class HalamanUtama extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10.0),
                     child: InkWell(
+                      
                       onTap: () {
                         if (menu['title'] == 'Stopwatch') {
                           Navigator.push(
@@ -168,6 +170,7 @@ class HalamanUtama extends StatelessWidget {
                         }
                       },
                       child: Card(
+                        
                         elevation: 4,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
@@ -217,7 +220,7 @@ class DaftarAnggota extends StatelessWidget {
     final List<Map<String, String>> anggota = [
       {'nama': 'Muhammad Alfi Ramadhan | 123220179', 'foto': 'img/alfi.jpg'},
       {'nama': 'Farizal Septin Efendi | 123220199', 'foto': 'img/rijal.jpg'},
-      {'nama': 'Dewangga Mukti Wibawa | 123220', 'foto': 'img/dwg.jpg'},
+      {'nama': 'Dewangga Mukti Wibawa | 123220208', 'foto': 'img/dwg.jpg'},
     ];
 
     return ListView.builder(
@@ -244,7 +247,7 @@ class DaftarAnggota extends StatelessWidget {
               horizontal: 16,
             ),
             leading: Container(
-              padding: const EdgeInsets.all(2), // padding untuk border
+              padding: const EdgeInsets.all(2), 
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(color: Colors.blueAccent, width: 2),
@@ -270,20 +273,58 @@ class MenuBantuan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24.0),
         child: Card(
           elevation: 5,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
           child: Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Text(
-              'Jika mengalami kendala, silakan hubungi tim pengembang melalui email:\n\nsupport@contoh.com',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16, height: 1.5),
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  'Panduan Penggunaan Aplikasi',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  '📌 Stopwatch:\n- Tekan "start" untuk memulai waktu.\n- Gunakan "stop" untuk menghentikan sementara.\n- Tekan "Reset" untuk mengatur ulang.',
+                  style: TextStyle(fontSize: 15),
+                ),
+                SizedBox(height: 12),
+                Text(
+                  '📌 Jenis Bilangan:\n- Masukkan angka untuk mengetahui apakah itu ganjil, genap, positif, negatif, atau nol.',
+                  style: TextStyle(fontSize: 15),
+                ),
+                SizedBox(height: 12),
+                Text(
+                  '📌 Konversi Waktu:\n- Masukk jumlah tahun untuk dikonversi ke hari, jam, dan menit.\n- Contoh: 1 tahun = 365 hari = 8.760 jam = 525.600 menit.',
+                  style: TextStyle(fontSize: 15),
+                ),
+                SizedBox(height: 12),
+                Text(
+                  '📌 LBS:\n- Tekan Tombol Untuk Mengetahui Lokasimu Sekarang',
+                  style: TextStyle(fontSize: 15),
+                ),
+                SizedBox(height: 12),
+                Text(
+                  '📌 Rekomendasi Situs:tekan card untuk melihat detail item, kemudian takan tombol (go to webstore) untuk menuju kesitus. \n- tekan tombol "love" untuk menambahkan item ke favorit',
+                  style: TextStyle(fontSize: 15),
+                ),
+                SizedBox(height: 24),
+                Text(
+                  'Jika mengalami kendala, silakan hubungi tim pengembang melalui email:\n\nsupport@contoh.com',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 15, height: 1.5),
+                ),
+              ],
             ),
           ),
         ),

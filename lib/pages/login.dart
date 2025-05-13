@@ -58,6 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                     const Text(
                       'Selamat Datang!',
                       style: TextStyle(
+                        
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: Colors.blueAccent,

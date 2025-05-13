@@ -59,7 +59,7 @@ class _checkNumberTypeState extends State<checkNumberType> {
         if (n > 0) {
           resultTypes.add('Bilangan Desimal Positif');
         } else if (n < 0) {
-          resultTypes.add('Bilangan Desima Negatif');
+          resultTypes.add('Bilangan Desimal Negatif');
         }
         resultTypes.add('Bilangan Desimal');
       }
